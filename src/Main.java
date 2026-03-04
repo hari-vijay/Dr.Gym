@@ -1,5 +1,14 @@
 public class Main {
+
     public static void main(String[] args) {
-        System.out.println("Dr Gym Project Started");
+        Login log = new Login();
+        boolean result = log.login();
+        if(result){
+            System.out.println("Welcome to Dr Gym");
+        }
+        else{
+            System.out.println("");
+        }
+
     }
 }
