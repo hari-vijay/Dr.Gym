@@ -1,10 +1,11 @@
 public class BMI {
 
-    public void  BMI(double height,double weight){
+    public void calculateBMI(double weight, double height){
 
         double bmi = weight / (height * height);
 
         System.out.println("Your BMI is: " + bmi);
+
         if(bmi < 18.5)
             System.out.println("Category: Underweight");
         else if(bmi < 25)
@@ -13,9 +14,5 @@ public class BMI {
             System.out.println("Category: Overweight");
         else
             System.out.println("Category: Obese");
-
-
-        //THIS IS BMI MODULE
-
     }
 }
