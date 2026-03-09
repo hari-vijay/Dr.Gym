@@ -14,5 +14,8 @@ public class BMI {
         else
             System.out.println("Category: Obese");
 
+
+        //THIS IS BMI MODULE
+
     }
 }
