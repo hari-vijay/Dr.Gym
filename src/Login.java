@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 import java.util.Random;
 public class Login {
@@ -9,13 +10,15 @@ public class Login {
         int pcount=0;
         String phno="";
         while(pcount<3) {
-            System.out.println("enter the mobile number");
+            System.out.println("enter the MOBILE NUMBER");
             phno = sc.nextLine();
             if (phno.length()== 10) {
                 break;
             }
             else{
                 pcount++;
+                System.out.println("*-INVALID  MOBILE NUMBER-*");
+                System.out.println();
                 }
             }
         if(pcount==3){
@@ -46,10 +49,11 @@ public class Login {
                 return true;
             } else {
                 count++;
-                System.out.println("Login Failed!");
+
+                System.out.println("OTP is INCORRECT");
             }
         }
-        System.out.println("Too many attempts ");
+        System.out.println("Login Failed!");
         return false;
     }
 }
