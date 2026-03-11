@@ -34,11 +34,11 @@ public class Login {
             return false;
         }
         int otp = 1000 + r.nextInt(9000);
-        System.out.println("yours OTP is : " + otp);
+        System.out.println("yours OTP is : " +colors.GREEN_BOLD+ otp+colors.RESET);
 
         int count = 0;
         while (count < 3) {
-            System.out.println("Enter your OTP ");
+            System.out.println(colors.CYAN_BOLD+"Enter your OTP "+colors.RESET);
             int userotp = sc.nextInt();
             if (userotp == otp) {
                 if (G == 'M') {
@@ -50,7 +50,7 @@ public class Login {
             } else {
                 count++;
 
-                System.out.println("OTP is INCORRECT");
+                System.out.println(colors.RED+"OTP is INCORRECT"+colors.RESET);
             }
         }
         System.out.println("Login Failed!");
