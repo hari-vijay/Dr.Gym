@@ -193,17 +193,22 @@ interface PremiumFeatures {
                 java.util.Scanner sc=new java.util.Scanner(System.in);
                 System.out.println(colors.GREEN_BOLD+"------ Premium Services ------"+colors.RESET);
                 System.out.println("1. Custom Workout");
-                System.out.println("2. Weekly Report");
-                System.out.println("3. Injury safe Workouts");
+                System.out.println("2. DietPlan ");
+                System.out.println("3. Weekly Report");
+                System.out.println("4. Injury safe Workouts");
                 int ch = sc.nextInt();
                 switch(ch){
                     case 1:
                         a.customizedworkout();
                         break;
                     case 2:
-                        a.weeklyreport();
+                        DietPlan d = new DietPlan();
+                        d.startDietModule();
                         break;
                     case 3:
+                        a.weeklyreport();
+                        break;
+                    case 4:
                         a.Injurysafeworkout();
                         break;
                     default:

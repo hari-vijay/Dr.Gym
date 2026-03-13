@@ -100,6 +100,7 @@ public class macrocalculator {
                 int qty = getQty(words,i,100);
 
                 calories+=qty*1.65;
+                carbs+=qty*0.18;
                 protein+=qty*0.31;
                 fats+=qty*0.036;
             }
@@ -308,13 +309,12 @@ public class macrocalculator {
 
         System.out.println("\n------ Macro Summary ------");
 
-        System.out.println("Total Calories : "+calories+" kcal");
-        System.out.println("Protein        : "+protein+" g");
-        System.out.println("Carbs          : "+carbs+" g");
-        System.out.println("Fats           : "+fats+" g");
-
+        System.out.printf("Total Calories  : %.2f kcal",calories );
+        System.out.printf("\nProtein         : %.2f g",protein);
+        System.out.printf("\nCarbs           : %.2f g",carbs);
+        System.out.printf("\nFats            : %.2f g", fats);
         if(protein < goalProtein){
-            System.out.println("Suggestion : Increase protein (eggs, chicken, whey)");
+            System.out.println("\nSuggestion : Increase protein (eggs, chicken, whey)");
         }
 
         if(carbs < goalCarbs){
