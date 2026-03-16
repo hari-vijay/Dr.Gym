@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class normaldiet {
+public class NormalDiet {
 
     public void normaldiet(){
 

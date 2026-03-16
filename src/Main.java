@@ -10,11 +10,11 @@ public class Main {
 //        else{
 //            System.out.println("");
 //        }
-//                AI ai=new AI();
-//                ai.AIBOT();
+                AI ai=new AI();
+                ai.AIBOT();
 
-         premium p=new premium();
-         p.premiumUser();
+//         premium p=new premium();
+//         p.premiumUser();
 
 //        BMI bmi = new BMI();
 //        bmi.calculateBMI(50,1.73);

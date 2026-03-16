@@ -51,7 +51,20 @@ class FoodDatabase{
     static List<Food> nonVegFoods(){
 
         return Arrays.asList(
-
+new Food("Oats",150,5,27,3),
+                new Food("Milk",120,8,12,5),
+                new Food("Paneer",265,18,4,20),
+                new Food("Soya Chunks",345,52,33,1),
+                new Food("Rice",200,4,45,1),
+                new Food("Chapati",120,3,20,2),
+                new Food("Dal",180,12,30,2),
+                new Food("Peanut Butter",180,8,6,15),
+                new Food("Banana",100,1,27,0),
+                new Food("Apple",95,0,25,0),
+                new Food("Broccoli",55,4,11,1),
+                new Food("Spinach",40,3,6,0),
+                new Food("Almonds",160,6,6,14),
+                new Food("Walnuts",185,4,4,18),
                 new Food("Eggs",155,13,1,11),
                 new Food("Chicken Breast",165,31,0,3),
                 new Food("Fish",206,22,0,12),
@@ -136,13 +149,10 @@ class DietBuilder{
     List<Food> generateDiet(List<Food> foods,int targetCalories){
 
         List<Food> plan=new ArrayList<>();
-
         int total=0;
 
         for(Food f:foods){
-
             if(total+f.calories<=targetCalories){
-
                 plan.add(f);
                 total+=f.calories;
             }
@@ -153,7 +163,41 @@ class DietBuilder{
 
         System.out.println("\nGenerated Diet");
 
-        for(Food f:plan)
+        // SLOT CREATION
+        List<Food> breakfast=new ArrayList<>();
+        List<Food> lunch=new ArrayList<>();
+        List<Food> snack=new ArrayList<>();
+        List<Food> dinner=new ArrayList<>();
+
+        for(int i=0;i<plan.size();i++){
+
+            if(i%4==0)
+                breakfast.add(plan.get(i));
+
+            else if(i%4==1)
+                lunch.add(plan.get(i));
+
+            else if(i%4==2)
+                snack.add(plan.get(i));
+
+            else
+                dinner.add(plan.get(i));
+        }
+
+        System.out.println("\nBreakfast");
+        for(Food f:breakfast)
+            System.out.println(f);
+
+        System.out.println("\nLunch");
+        for(Food f:lunch)
+            System.out.println(f);
+
+        System.out.println("\nSnack");
+        for(Food f:snack)
+            System.out.println(f);
+
+        System.out.println("\nDinner");
+        for(Food f:dinner)
             System.out.println(f);
 
         System.out.println("\nTotal Calories : "+total);
@@ -195,16 +239,57 @@ class PremiumCustomizer {
 
         System.out.println("\nUpdated Diet");
 
-        int total = 0;
+        List<Food> breakfast=new ArrayList<>();
+        List<Food> lunch=new ArrayList<>();
+        List<Food> snack=new ArrayList<>();
+        List<Food> dinner=new ArrayList<>();
 
-        for (Food f : diet) {
+        for(int i=0;i<diet.size();i++){
 
-            System.out.println(f);
-            total += f.calories;
+            if(i%4==0)
+                breakfast.add(diet.get(i));
+
+            else if(i%4==1)
+                lunch.add(diet.get(i));
+
+            else if(i%4==2)
+                snack.add(diet.get(i));
+
+            else
+                dinner.add(diet.get(i));
         }
 
-        System.out.println("Total Calories : " + total);
-    }
+
+
+        int total=0;
+
+        System.out.println("\nBreakfast");
+        for(Food f:breakfast){
+            System.out.println(f);
+            total+=f.calories;
+        }
+
+        System.out.println("\nLunch");
+        for(Food f:lunch){
+            System.out.println(f);
+            total+=f.calories;
+        }
+
+        System.out.println("\nSnack");
+        for(Food f:snack){
+            System.out.println(f);
+            total+=f.calories;
+        }
+
+        System.out.println("\nDinner");
+        for(Food f:dinner){
+            System.out.println(f);
+            total+=f.calories;
+        }
+
+        System.out.println("\nTotal Calories : "+total);
+
+        }
 
 
     void replaceFood(List<Food> diet, List<Food> foods, String dislike) {

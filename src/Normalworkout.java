@@ -27,7 +27,7 @@ class normal extends User implements features{
         System.out.println("Strength Traing 6x days a week");
     }
 }
-public class NormalUser {
+public class Normalworkout {
     public void NormalFeatures(){
         normal n=new normal();
         java.util.Scanner sc=new java.util.Scanner(System.in);
