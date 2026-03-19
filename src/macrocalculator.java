@@ -26,7 +26,7 @@ public class macrocalculator {
         double carbs = 0;
         double fats = 0;
 
-        int weight = 70;
+        int weight = (int) Login.calculator.weight;
 
         double goalCalories = weight * 30;
         double goalProtein = weight * 1.6;
@@ -304,6 +304,113 @@ public class macrocalculator {
                 carbs+=qty*0.37;
                 protein+=qty*0.04;
             }
+            else if(words[i].equals("sambar")){
+                int qty = getQty(words,i,100);
+                calories+=qty*0.80;
+                carbs+=qty*0.10;
+                protein+=qty*0.03;
+            }
+
+            else if(words[i].equals("rasam")){
+                int qty = getQty(words,i,100);
+                calories+=qty*0.40;
+                carbs+=qty*0.06;
+            }
+
+            else if(words[i].equals("pongal")){
+                int qty = getQty(words,i,100);
+                calories+=qty*1.60;
+                carbs+=qty*0.25;
+                fats+=qty*0.07;
+            }
+
+            else if(words[i].equals("poha")){
+                int qty = getQty(words,i,100);
+                calories+=qty*1.30;
+                carbs+=qty*0.28;
+                protein+=qty*0.03;
+            }
+
+            else if(words[i].equals("paratha")){
+                int qty = getQty(words,i,1);
+                calories+=qty*250;
+                carbs+=qty*35;
+                fats+=qty*10;
+            }
+            else if(words[i].equals("boiledegg")){
+                int qty = getQty(words,i,1);
+                calories+=qty*70;
+                protein+=qty*6;
+            }
+
+            else if(words[i].equals("eggwhite")){
+                int qty = getQty(words,i,1);
+                calories+=qty*17;
+                protein+=qty*3.6;
+            }
+
+            else if(words[i].equals("chickenbreast")){
+                int qty = getQty(words,i,100);
+                calories+=qty*1.65;
+                protein+=qty*0.31;
+            }
+
+            else if(words[i].equals("mutton")){
+                int qty = getQty(words,i,100);
+                calories+=qty*2.94;
+                protein+=qty*0.25;
+                fats+=qty*0.21;
+            }
+            else if(words[i].equals("burger")){
+                int qty = getQty(words,i,1);
+                calories+=qty*295;
+                carbs+=qty*30;
+                fats+=qty*14;
+            }
+
+            else if(words[i].equals("fries")){
+                int qty = getQty(words,i,1);
+                calories+=qty*312;
+                carbs+=qty*41;
+                fats+=qty*15;
+            }
+
+            else if(words[i].equals("shawarma")){
+                int qty = getQty(words,i,1);
+                calories+=qty*350;
+                protein+=qty*20;
+                fats+=qty*15;
+            }
+            else if(words[i].equals("juice")){
+                int qty = getQty(words,i,1);
+                calories+=qty*110;
+                carbs+=qty*25;
+            }
+
+            else if(words[i].equals("tea")){
+                int qty = getQty(words,i,1);
+                calories+=qty*40;
+                carbs+=qty*5;
+            }
+
+            else if(words[i].equals("coffee")){
+                int qty = getQty(words,i,1);
+                calories+=qty*30;
+            }
+            else if(words[i].equals("chocolate")){
+                int qty = getQty(words,i,1);
+                calories+=qty*150;
+                carbs+=qty*20;
+                fats+=qty*8;
+            }
+
+            else if(words[i].equals("icecream")){
+                int qty = getQty(words,i,1);
+                calories+=qty*207;
+                carbs+=qty*24;
+                fats+=qty*11;
+            }
+
 
         }
 
@@ -318,11 +425,11 @@ public class macrocalculator {
         }
 
         if(carbs < goalCarbs){
-            System.out.println("Suggestion : Increase carbs (rice, chapati, oats)");
+            System.out.println("\nSuggestion : Increase carbs (rice, chapati, oats)");
         }
 
         if(fats < goalFats){
-            System.out.println("Suggestion : Add healthy fats (almonds, peanuts)");
+            System.out.println("\nSuggestion : Add healthy fats (almonds, peanuts)");
         }
 
     }

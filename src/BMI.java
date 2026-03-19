@@ -4,16 +4,20 @@ public class BMI {
 
         double bmi = weight / (height * height);
 
-        System.out.printf(" Your BMI is: %.2f" , bmi);
+        System.out.println(colors.CYAN_BOLD + "\n===== BMI RESULT =====" + colors.RESET);
+
+        System.out.printf(colors.YELLOW + "Your BMI is: %.2f" + colors.RESET , bmi);
         System.out.println();
+
         if(bmi < 18.5)
-            System.out.println("Category: Underweight");
+            System.out.println(colors.YELLOW + "Category: Underweight ⚠" + colors.RESET);
         else if(bmi < 25)
-            System.out.println("Category: Normal Weight");
+            System.out.println(colors.GREEN + "Category: Normal Weight 💪" + colors.RESET);
         else if(bmi < 30)
-            System.out.println("Category: Overweight");
+            System.out.println(colors.RED + "Category: Overweight ❗" + colors.RESET);
         else
-            System.out.println("Category: Obese");
+            System.out.println(colors.RED_BOLD + "Category: Obese 🚨" + colors.RESET);
+
         return bmi;
     }
 }
